@@ -1,6 +1,7 @@
 # Redis SIMD JSON
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+[![npm version](https://img.shields.io/npm/v/redis-simd-json)](https://www.npmjs.com/package/redis-simd-json)
 [![Cargo](https://img.shields.io/crates/v/redis-simd-json.svg)](https://crates.io/crates/redis-simd-json)
 [![Documentation](https://docs.rs/redis-simd-json/badge.svg)](https://docs.rs/redis-simd-json)
 
