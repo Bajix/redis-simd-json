@@ -5,7 +5,7 @@
 [![Documentation](https://docs.rs/redis-simd-json/badge.svg)](https://docs.rs/redis-simd-json)
 
 
-Ultra-performant Redis GET/SET behaviors utilizing SIMD JSON serialization and connection multiplexing via [redis-swapplex](https://crates.io/crates/redis-swapplex).
+Ultra-performant Redis GET/SET/MGET/MSET commands utilizing SIMD JSON serialization and connection multiplexing via [redis-swapplex](https://crates.io/crates/redis-swapplex).
 
 The Redis client can be configured using ENV variables:
 
