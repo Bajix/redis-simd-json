@@ -1,0 +1,19 @@
+{
+  "name": "redis-simd-json",
+  "version": "1.0.0",
+  "description": "Performant Redis GET/SET behaviors utilizing SIMD JSON serialization",
+  "main": "index.js",
+  "repository": "git@github.com:Bajix/redis-simd-json.git",
+  "author": "Thomas Sieverding <Thomas@bajix.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@napi-rs/cli": "2"
+  },
+  "napi": {
+    "name": "redis-simd-json"
+  },
+  "scripts": {
+    "build": "RUSTFLAGS='-C target-cpu=native' napi build --release",
+    "build:debug": "RUSTFLAGS='-C target-cpu=native' napi build"
+  }
+}
