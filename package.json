@@ -1,6 +1,6 @@
 {
   "name": "redis-simd-json",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Performant Redis GET/SET behaviors utilizing SIMD JSON serialization",
   "main": "index.js",
   "repository": "Bajix/redis-simd-json",

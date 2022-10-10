@@ -6,7 +6,9 @@
 [![Documentation](https://docs.rs/redis-simd-json/badge.svg)](https://docs.rs/redis-simd-json)
 
 
-Ultra-performant Redis GET/SET/MGET/MSET commands utilizing SIMD JSON serialization and connection multiplexing via [redis-swapplex](https://crates.io/crates/redis-swapplex).
+Blazingly fast Redis GET/SET/MGET/MSET commands utilizing SIMD JSON serialization and connection multiplexing via [redis-swapplex](https://crates.io/crates/redis-swapplex). As this is authored entirely in Rust utilizing generated N-API bindings, it is able to achieve a level of performance otherwise not possible using a NodeJS Redis client.
+
+Additionally, this library adds support for compare and swap if [redis-cas](https://github.com/Bajix/redis-cas/) is installed on the connected Redis server.
 
 The Redis client can be configured using ENV variables:
 

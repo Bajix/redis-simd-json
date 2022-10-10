@@ -1,3 +1,3 @@
-const { get, mget, set, mset } = require("./redis-simd-json.node");
+const { get, mget, set, mset, compareAndSwap } = require("./redis-simd-json.node");
 
-module.exports = { get, mget, set, mset };
+module.exports = { get, mget, set, mset, compareAndSwap };

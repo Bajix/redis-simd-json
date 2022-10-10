@@ -75,6 +75,30 @@ pub async fn set(key: String, value: Option<Value>) -> Result<()> {
 }
 
 #[napi]
+/// Serialize and set the value at a key if the current value hasn't changed. Returns count of modified keys. Requires that [redis-cas](https://github.com/Bajix/redis-cas) is loaded on Redis
+pub async fn compare_and_swap(key: String, current: Value, value: Option<Value>) -> Result<i64> {
+  let current = simd_json::to_vec(&current)
+    .map_err(|err| Error::new(Status::GenericFailure, err.to_string()))?;
+
+  let value = match value {
+    Some(value) => simd_json::to_vec(&value)
+      .map_err(|err| Error::new(Status::GenericFailure, err.to_string()))?,
+
+    None => vec![],
+  };
+
+  let mut conn = get_connection();
+
+  let n_modified: i64 = redis::cmd("CAS")
+    .arg(&[key.as_bytes(), &current, &value])
+    .query_async(&mut conn)
+    .await
+    .map_err(|err| Error::new(Status::GenericFailure, format!("{:?}", err)))?;
+
+  Ok(n_modified)
+}
+
+#[napi]
 /// Serialize and set the values of multiple keys
 pub async fn mset(data: Vec<(String, Option<Value>)>) -> Result<()> {
   let data = data

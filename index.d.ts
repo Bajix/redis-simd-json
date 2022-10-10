@@ -9,5 +9,7 @@ export function get(key: string): Promise<any | null>
 export function mget(keys: Array<string>): Promise<Array<any | undefined | null>>
 /** Serialize and set the value at a key */
 export function set(key: string, value?: any | undefined | null): Promise<void>
+/** Serialize and set the value at a key if the current value hasn't changed. Returns count of modified keys. Requires that [redis-cas](https://github.com/Bajix/redis-cas) is loaded on Redis */
+export function compareAndSwap(key: string, current: any, value?: any | undefined | null): Promise<number>
 /** Serialize and set the values of multiple keys */
 export function mset(data: Array<[string, any | undefined | null]>): Promise<void>
