@@ -10,3 +10,5 @@ Cargo.lock
 **/*.rs.bk
 
 redis-simd-json.node
+
+node_modules
