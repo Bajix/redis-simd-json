@@ -1,6 +1,6 @@
 {
   "name": "redis-simd-json",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Performant Redis GET/SET behaviors utilizing SIMD JSON serialization",
   "main": "index.js",
   "repository": "Bajix/redis-simd-json",
@@ -11,8 +11,8 @@
   "license": "MIT",
   "devDependencies": {
     "@napi-rs/cli": "2",
-    "buffalo-bench": "^2.0.0",
-    "ioredis": "^5.2.3"
+    "buffalo-bench": "2",
+    "ioredis": "^5.3"
   },
   "napi": {
     "name": "redis-simd-json"
